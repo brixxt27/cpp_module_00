@@ -1,8 +1,4 @@
-# =============================================================================
-# Command Variables
-# =============================================================================
-
-NAME		= megaphone
-SRCS		= megaphone.cpp
-INCS		= 
+NAME	= megaphone
+SRCS	= megaphone.cpp
+INCS	= 
 include ../template.mk

@@ -2,23 +2,17 @@
 
 int	main(int argc, char *argv[])
 {
-	std::string	arr;
-	size_t			len;
-	size_t			i = 1;
+	std::string	str;
 
 	if (argc == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	while (argv[i]) {
-		arr = argv[i];
-		len = arr.length();
-		for (size_t j = 0; len > j; ++j) {
-			if (std::islower(arr[j]))
-				arr[j] = std::toupper(arr[j]);
-			std::cout << arr[j];
+	for (int i = 1; i < argc; ++i) {
+		str = argv[i];
+		for (std::string::iterator it = str.begin(); it != str.end(); ++it) {
+			std::islower(*it) ? std::cout << (char)std::toupper(*it) : std::cout << *it;
 		}
-		++i;
 	}
 	std::cout << std::endl;
 	return (EXIT_SUCCESS);
