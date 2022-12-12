@@ -13,3 +13,5 @@ $>./megaphone
 * LOUD AND UNBEARABLE FEEDBACK NOISE *
 $>
 ```
+1. argc 가 1일 때 "* LOUD AND UNBEARABLE FEEDBACK NOISE *" 출력
+2. 명령행 인자로 몇 개가 들어오든지 이를 한 줄로 출력하는데, 소문자를 대문자로 변경한다.
