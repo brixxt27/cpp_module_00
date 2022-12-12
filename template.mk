@@ -2,21 +2,21 @@
 # Command Variables
 # =============================================================================
 
-DIR_INCS	= ./
-OBJS		= $(SRCS:.cpp=.o)
+DIR_INCS		= ./
+OBJS			= $(SRCS:.cpp=.o)
 
 # =============================================================================
 # Command Variables
 # =============================================================================
 
-CC			= c++
-RM			= rm -rf
+CXX				= c++
+RM				= rm -rf
 ifdef DEBUG
-	CFLAGS	= --std=c++98 -g3 -fsanitize=address
+	CXXFLAGS	= --std=c++98 -g3 -fsanitize=address
 else ifdef LEAKS
-	CFLAGS	= --std=c++98 -g3
+	CXXFLAGS	= --std=c++98 -g3
 else
-	CFLAGS	= --std=c++98 -Wall -Wextra -Werror
+	CXXFLAGS	= --std=c++98 -Wall -Wextra -Werror
 endif
 
 # =============================================================================
@@ -24,10 +24,10 @@ endif
 # =============================================================================
 
 %.o		: %.cpp
-	$(CC) $(CFLAGS) -I $(DIR_INCS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I $(DIR_INCS) -c $< -o $@
 
 $(NAME)	: $(OBJS) $(INCS)
-	$(CC) $(CFLAGS) -I $(DIR_INCS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) -I $(DIR_INCS) $(OBJS) -o $(NAME)
 
 # =============================================================================
 # Rules
