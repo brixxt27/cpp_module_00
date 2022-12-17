@@ -9,7 +9,7 @@ class PhoneBook {
 		void	Search() const;
 
 	private:
-		Contact phoneBook[8];
+		Contact phoneBook_[8];
 };
 
 #endif
