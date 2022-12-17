@@ -3,6 +3,10 @@
 int	main(int argc, char *argv[])
 {
 	std::string	str;
+	std::string s1 = "1234";
+	std::string s2 = "12345";
+
+	std::cout << "Result: " << (s1 == s2) << std::endl;
 
 	if (argc == 1) {
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
