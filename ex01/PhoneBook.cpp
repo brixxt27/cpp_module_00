@@ -1,7 +1,7 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
-
-#include <unistd.h>
+#include <sstream>
+#include <string>
 
 void	PhoneBook::Add() {
 	std::cout << std::setw(10) << "012345678901" << std::endl;
@@ -9,10 +9,11 @@ void	PhoneBook::Add() {
 }
 
 void	PhoneBook::Search() const {
-	int	idx;
+	std::string str;
+	std::streamstring ss;
 
 	std::cout << "*** Input an integer index between 0 and 8 ***" << std::endl;
-	std::cin >> idx;
+	std::cin >> str;
 	if (idx >= 0 && idx <= 8) {
 		std::cout
 		<< std::setw(10) << std::right << "index" << "|"

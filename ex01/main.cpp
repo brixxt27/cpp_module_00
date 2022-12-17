@@ -15,10 +15,13 @@ int	main() {
 		if (str == "SEARCH") {
 			phone_book.Search();
 		}
+		if (std::cin.eof()) {
+			break ;
+		}
 		
-		std::cin.clear();
-		std::cin.ignore(LLONG_MAX);
-		str.clear();
+		// std::cin.clear();
+		// std::cin.ignore(LLONG_MAX);
+		// str.clear();
 	}
 	std::cout << "Phone book is over!" << std::endl;
 	return 0;
