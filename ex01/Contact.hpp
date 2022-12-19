@@ -6,12 +6,14 @@
 class Contact {
 public:
 	Contact();
+	void		SetMyIdx(int idx);
 	void		SetFirstName(std::string& first_name);
 	void		SetLastName(std::string& last_name);
 	void		SetNickname(std::string& nick_name);
 	void		SetPhoneNumber(std::string& phone_number);
 	void		SetDarkestSecret(std::string& darkest_secret);
 
+	int					GetMyIdx() const;
 	std::string	GetFirstName() const;
 	std::string	GetLastName() const;
 	std::string	GetNickname() const;
@@ -19,6 +21,7 @@ public:
 	std::string	GetDarkestSecret() const;
 
 private:
+	int					my_idx_;
 	std::string	first_name_;
 	std::string	last_name_;
 	std::string	nickname_;

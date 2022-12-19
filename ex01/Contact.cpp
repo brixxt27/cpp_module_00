@@ -8,6 +8,10 @@ Contact::Contact()
 , darkest_secret_("")
 {}
 
+void	Contact::SetMyIdx(int idx) {
+	my_idx_ = idx;
+}
+
 void	Contact::SetFirstName(std::string& first_name) {
 	first_name_ = first_name;
 }
@@ -25,6 +29,10 @@ void	Contact::SetPhoneNumber(std::string& phone_number) {
 }
 void	Contact::SetDarkestSecret(std::string& darkest_secret) {
 	darkest_secret_ = darkest_secret;
+}
+
+int	Contact::GetMyIdx() const {
+	return my_idx_;
 }
 
 std::string	Contact::GetFirstName() const {

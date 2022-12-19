@@ -34,7 +34,7 @@ int	main() {
 
 	while (str != "EXIT") {
 		std::cout << "PhoneBook: Input COMMAND(ADD or SEARCH or EXIT) on the next line" << std::endl;
-		std::cout << "==> ";
+		std::cout << "==> " << std::endl;
 		std::cin >> str;
 		std::cout << std::endl;
 
