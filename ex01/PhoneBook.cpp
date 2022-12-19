@@ -21,10 +21,13 @@ void	PhoneBook::SetIdx() {
 void	PhoneBook::Add() {
 	std::string	str = "";
 
-	while (std::cin.eof() == false && str == "") {
-		std::cout << "* first name *" << std::endl;
-		std::cin >> str;
-	}
+	std::cout << "* first name *" << std::endl;
+	std::cout << "==> ";
+	std::cin >> str;
+	std::cout << std::endl;
+
+	if (std::cin.eof() == true)
+		return;
 	phone_book_[idx_].SetFirstName(str);
 	std::cout << phone_book_[idx_].GetFirstName() << std::endl;
 }
