@@ -6,7 +6,7 @@ int	main() {
 	PhoneBook	phone_book;
 	
 	while (str != "EXIT") {
-		std::cout << "*** Input command on next line ***" << std::endl;
+		std::cout << "*** Input command on the next line ***" << std::endl;
 		std::cin >> str;
 
 		if (str == "ADD") {

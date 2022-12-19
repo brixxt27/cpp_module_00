@@ -5,11 +5,13 @@
 
 class PhoneBook {
 public:
+	PhoneBook();
 	void	Add();
 	void	Search() const;
 
 private:
 	Contact phoneBook_[8];
+	int		idx_;
 };
 
 #endif
