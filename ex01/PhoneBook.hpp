@@ -6,11 +6,12 @@
 class PhoneBook {
 public:
 	PhoneBook();
+	int		GetIdx();
+	void	SetIdx();
 	void	Add();
 	void	Search() const;
-
 private:
-	Contact phoneBook_[8];
+	Contact phone_book_[8];
 	int		idx_;
 };
 

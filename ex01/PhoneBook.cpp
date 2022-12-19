@@ -7,34 +7,54 @@ PhoneBook::PhoneBook()
 : idx_(0)
 {}
 
+int		PhoneBook::GetIdx() {
+	return idx_;
+}
+
+void	PhoneBook::SetIdx() {
+	if (idx_ == 8)
+		idx_ = 0;
+	else
+		++idx_;
+}
+
 void	PhoneBook::Add() {
 	std::string	str = "";
 
-	while (str == "") {
-		std::cout << "* Input the first name that isn't empty on the next line *" << std::endl;
+	while (std::cin.eof() == false && str == "") {
+		std::cout << "* first name *" << std::endl;
 		std::cin >> str;
 	}
-	phoneBook_[idx_].SetFirstName(str);
-}
-
-static int	IsBetween0To8(std::string& str) {
-	return str == "0" || str == "1" || str == "2" || str == "3" || str == "4"
-		|| str == "5" || str == "6" || str == "7" || str == "8";
+	phone_book_[idx_].SetFirstName(str);
+	std::cout << phone_book_[idx_].GetFirstName() << std::endl;
 }
 
 void	PhoneBook::Search() const {
-	std::string			str;
+	int	idx = -1;
 
-	std::cout << "*** Input an integer number between 0 and 8 on the next line ***" << std::endl;
-	std::cin >> str;
-	if (IsBetween0To8(str)) {
+	std::cout << "Search: Input an integer number between 0 and 8 on the next line" << std::endl;
+	std::cout << "==> ";
+	std::cin >> idx;
+	std::cout << std::endl;
+
+	if (std::cin.eof() == true)
+		return;
+	if (std::cin.fail() == false && (idx >= 0 && idx <= 8)) {
 		std::cout
 		<< std::setw(10) << std::right << "index" << "|"
 		<< std::setw(10) << std::right << "first name" << "|"
 		<< std::setw(10) << std::right << "last name" << "|"
 		<< std::setw(10) << std::right << "nickname" << std::endl;
+		
+		std::cout
+		<< std::setw(10) << std::right << phone_book_[idx].GetFirstName() << "|"
+		<< std::setw(10) << std::right << phone_book_[idx].GetLastName() << "|"
+		<< std::setw(10) << std::right << phone_book_[idx].GetLastName() << "|"
+		<< std::setw(10) << std::right << phone_book_[idx].GetNickname() << std::endl;
 	}
 	else {
-		std::cout << "Index is out of range or wrong!" << std::endl;
+		std::cout << "※ Error: Index is out of range or wrong ※\n" << std::endl;
+		std::cin.clear();
+		std::cin.ignore(LLONG_MAX, '\n');
 	}
 }
