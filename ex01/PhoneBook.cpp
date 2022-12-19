@@ -12,7 +12,7 @@ int		PhoneBook::GetIdx() {
 }
 
 void	PhoneBook::SetIdx() {
-	if (idx_ == 8)
+	if (idx_ == 7)
 		idx_ = 0;
 	else
 		++idx_;
@@ -35,14 +35,14 @@ void	PhoneBook::Add() {
 void	PhoneBook::Search() const {
 	int	idx = -1;
 
-	std::cout << "Search: Input an integer number between 0 and 8 on the next line" << std::endl;
+	std::cout << "Search: Input an integer number between 0 and 7 on the next line" << std::endl;
 	std::cout << "==> ";
 	std::cin >> idx;
 	std::cout << std::endl;
 
 	if (std::cin.eof() == true)
 		return;
-	if (std::cin.fail() == false && (idx >= 0 && idx <= 8)) {
+	if (std::cin.fail() == false && (idx >= 0 && idx < 8)) {
 		std::cout
 		<< std::setw(10) << std::right << "index" << "|"
 		<< std::setw(10) << std::right << "first name" << "|"
