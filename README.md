@@ -24,7 +24,8 @@ $>
 - Files to turn in : Makefile, *.cpp, *.{h, hpp}
 - Forbidden functions : None
 ## Detail
-<img width="1116" alt="image" src="https://user-images.githubusercontent.com/83959536/208470414-a117eef3-bcc0-43d1-89da-de0ddadeae1d.png">
+<img width="1426" alt="image" src="https://user-images.githubusercontent.com/83959536/208599844-a740d203-fb0c-41e3-b654-c698332923a4.png">
+
 
 1. 두 개의 class를 구현하라.
 - PhoneBook
