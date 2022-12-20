@@ -1,7 +1,8 @@
 #include "Contact.hpp"
 
 Contact::Contact()
-: first_name_("")
+: my_idx_(-1)
+, first_name_("")
 , last_name_("")
 , nickname_("")
 , phone_number_("")
@@ -31,7 +32,7 @@ void	Contact::SetDarkestSecret(const std::string& darkest_secret) {
 	darkest_secret_ = darkest_secret;
 }
 
-const int	Contact::GetMyIdx() const {
+const int&	Contact::GetMyIdx() const {
 	return my_idx_;
 }
 

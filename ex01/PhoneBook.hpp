@@ -6,14 +6,17 @@
 class PhoneBook {
 public:
 	PhoneBook();
-	int		GetIdx() const;
-	void	SetIdx();
+	int		GetNextIdx() const;
+	void	SetNextIdx();
+	int		GetSize() const;
+	void	SetSize();
 	void	Add();
 	void	Search() const;
 
 private:
 	Contact phone_book_[8];
-	int		idx_;
+	int		next_idx_;
+	int		size_;
 };
 
 #endif

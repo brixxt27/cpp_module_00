@@ -13,7 +13,7 @@ public:
 	void	SetPhoneNumber(const std::string& phone_number);
 	void	SetDarkestSecret(const std::string& darkest_secret);
 
-	const int			GetMyIdx() const;
+	const int&			GetMyIdx() const;
 	const std::string&	GetFirstName() const;
 	const std::string&	GetLastName() const;
 	const std::string&	GetNickname() const;
