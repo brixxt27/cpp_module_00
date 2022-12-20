@@ -136,11 +136,37 @@ void	PhoneBook::Search() const {
 	<< std::setw(10) << std::right << "nickname" << "|" << std::endl
 	<< "---------------------------------------------" << std::endl;
 	
-	std::cout
-	<< "|"
-	<< std::setw(10) << std::right << phone_book_[idx].GetMyIdx() << "|"
-	<< std::setw(10) << std::right << phone_book_[idx].GetFirstName() << "|"
-	<< std::setw(10) << std::right << phone_book_[idx].GetLastName() << "|"
-	<< std::setw(10) << std::right << phone_book_[idx].GetNickname() << "|" << std::endl
+
+	std::cout << "|"
+	<< std::setw(10) << std::right << phone_book_[idx].GetMyIdx() << "|";
+
+	if (phone_book_[idx].GetFirstName().size() > 10) {
+		for (int i = 0; i < 9; ++i)
+			std::cout << phone_book_[idx].GetFirstName().at(i);
+		std::cout << ".";
+	}
+	else
+		std::cout << std::setw(10) << std::right << phone_book_[idx].GetFirstName();
+	std::cout << "|";
+
+	if (phone_book_[idx].GetLastName().size() > 10) {
+		for (int i = 0; i < 9; ++i)
+			std::cout << phone_book_[idx].GetLastName().at(i);
+		std::cout << ".";
+	}
+	else
+		std::cout << std::setw(10) << std::right << phone_book_[idx].GetLastName();
+	std::cout << "|";
+
+	if (phone_book_[idx].GetNickname().size() > 10) {
+		for (int i = 0; i < 9; ++i)
+			std::cout << phone_book_[idx].GetNickname().at(i);
+		std::cout << ".";
+	}
+	else
+		std::cout << std::setw(10) << std::right << phone_book_[idx].GetNickname();
+	std::cout << "|";
+
+	std::cout << std::endl
 	<< "---------------------------------------------" << std::endl;
 }
