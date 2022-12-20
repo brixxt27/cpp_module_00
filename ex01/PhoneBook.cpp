@@ -25,7 +25,7 @@ void	PhoneBook::SetIdx() {
 
 // 	std::cout << "* " << field << " *" << std::endl;
 // 	std::cout << "==> " << std::endl;
-// 	std::cin >> str;
+// 	std::getline(std::cin, str);;
 // 	std::cout << std::endl;
 
 // 	if (std::cin.eof() == true)
@@ -39,7 +39,7 @@ void	PhoneBook::Add() {
 
 	std::cout << "* first name *" << std::endl;
 	std::cout << "==> " << std::endl;
-	std::cin >> str;
+	std::getline(std::cin, str);
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
@@ -47,7 +47,7 @@ void	PhoneBook::Add() {
 
 	std::cout << "* last name *" << std::endl;
 	std::cout << "==> " << std::endl;
-	std::cin >> str;
+	std::getline(std::cin, str);;
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
@@ -55,7 +55,7 @@ void	PhoneBook::Add() {
 
 	std::cout << "* nickname *" << std::endl;
 	std::cout << "==> " << std::endl;
-	std::cin >> str;
+	std::getline(std::cin, str);;
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
@@ -63,7 +63,7 @@ void	PhoneBook::Add() {
 
 	std::cout << "* phone number *" << std::endl;
 	std::cout << "==> " << std::endl;
-	std::cin >> str;
+	std::getline(std::cin, str);;
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
@@ -71,7 +71,7 @@ void	PhoneBook::Add() {
 
 	std::cout << "* darkest secret *" << std::endl;
 	std::cout << "==> " << std::endl;
-	std::cin >> str;
+	std::getline(std::cin, str);;
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
@@ -86,7 +86,7 @@ void	PhoneBook::Add() {
 void	PhoneBook::Search() const {
 	int	idx = -1;
 
-	std::cout << "Search: Input an integer number between 0 and 7 on the next line" << std::endl;
+	std::cout << "Search: Input an integer number between 0 and 7" << std::endl;
 	std::cout << "==> " << std::endl;
 	std::cin >> idx;
 	std::cout << std::endl;
@@ -95,16 +95,21 @@ void	PhoneBook::Search() const {
 		return;
 	if (std::cin.fail() == false && (idx >= 0 && idx < 8)) {
 		std::cout
+		<< "----------------------------------------------" << std::endl
+		<< "|"
 		<< std::setw(10) << std::right << "index" << "|"
 		<< std::setw(10) << std::right << "first name" << "|"
 		<< std::setw(10) << std::right << "last name" << "|"
-		<< std::setw(10) << std::right << "nickname" << std::endl;
+		<< std::setw(10) << std::right << "nickname" << "|" << std::endl
+		<< "----------------------------------------------" << std::endl;
 		
 		std::cout
+		<< "|"
 		<< std::setw(10) << std::right << phone_book_[idx].GetMyIdx() << "|"
 		<< std::setw(10) << std::right << phone_book_[idx].GetFirstName() << "|"
 		<< std::setw(10) << std::right << phone_book_[idx].GetLastName() << "|"
-		<< std::setw(10) << std::right << phone_book_[idx].GetNickname() << std::endl;
+		<< std::setw(10) << std::right << phone_book_[idx].GetNickname() << "|" << std::endl
+		<< "----------------------------------------------" << std::endl;
 	}
 	else {
 		std::cout << "※ Error: Index is out of range or wrong ※\n" << std::endl;

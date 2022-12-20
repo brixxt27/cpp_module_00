@@ -33,10 +33,11 @@ int	main() {
 	Message::NiceToMeetYou();
 
 	while (str != "EXIT") {
-		std::cout << "PhoneBook: Input COMMAND(ADD or SEARCH or EXIT) on the next line" << std::endl;
+		std::cout << "PhoneBook: Input COMMAND(ADD or SEARCH or EXIT)" << std::endl;
 		std::cout << "==> " << std::endl;
 		std::cin >> str;
 		std::cout << std::endl;
+		std::cin.ignore(LLONG_MAX, '\n');
 
 		if (str == "ADD") {
 			phone_book.Add();
