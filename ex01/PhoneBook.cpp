@@ -18,20 +18,16 @@ void	PhoneBook::SetIdx() {
 		++idx_;
 }
 
-
-// static bool	SaveInfo(const Contact phone_book, const std::string& field, 
-// 				void (*f)(std::string& field)) {
+// static bool	SaveInfo(const std::string& field, void (Contact::*set_function)(std::string& field)) {
 // 	std::string	str = "";
 
-// 	std::cout << "* " << field << " *" << std::endl;
+// 	std::cout << "* "<< field <<" *" << std::endl;
 // 	std::cout << "==> " << std::endl;
-// 	std::getline(std::cin, str);;
+// 	std::getline(std::cin, str);
 // 	std::cout << std::endl;
-
 // 	if (std::cin.eof() == true)
 // 		return;
-// 	// PhoneBook::phone_book_[idx_].SetFirstName(str);
-// 	phone_book.f(field);
+// 	set_function(str);
 // }
 
 void	PhoneBook::Add() {
@@ -76,8 +72,6 @@ void	PhoneBook::Add() {
 	if (std::cin.eof() == true)
 		return;
 	phone_book_[idx_].SetDarkestSecret(str);
-
-	// std::cin.ignore(LLONG_MAX, '\n');
 
 	phone_book_[idx_].SetMyIdx(idx_);
 	SetIdx();

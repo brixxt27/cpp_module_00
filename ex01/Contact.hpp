@@ -6,19 +6,19 @@
 class Contact {
 public:
 	Contact();
-	void		SetMyIdx(int idx);
-	void		SetFirstName(std::string& first_name);
-	void		SetLastName(std::string& last_name);
-	void		SetNickname(std::string& nick_name);
-	void		SetPhoneNumber(std::string& phone_number);
-	void		SetDarkestSecret(std::string& darkest_secret);
+	void	SetMyIdx(const int idx);
+	void	SetFirstName(const std::string& first_name);
+	void	SetLastName(const std::string& last_name);
+	void	SetNickname(const std::string& nick_name);
+	void	SetPhoneNumber(const std::string& phone_number);
+	void	SetDarkestSecret(const std::string& darkest_secret);
 
-	int			GetMyIdx() const;
-	std::string	GetFirstName() const;
-	std::string	GetLastName() const;
-	std::string	GetNickname() const;
-	std::string	GetPhoneNumber() const;
-	std::string	GetDarkestSecret() const;
+	const int			GetMyIdx() const;
+	const std::string&	GetFirstName() const;
+	const std::string&	GetLastName() const;
+	const std::string&	GetNickname() const;
+	const std::string&	GetPhoneNumber() const;
+	const std::string&	GetDarkestSecret() const;
 
 private:
 	int			my_idx_;
