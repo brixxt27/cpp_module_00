@@ -18,38 +18,66 @@ void	PhoneBook::SetIdx() {
 		++idx_;
 }
 
-Contact	PhoneBook::GetPhoneBook(int idx_) const {
-	return phone_book_[idx_];
-}
 
-bool	SaveInfo(const char *field, void (*f)(std::string& field)) {
-	std::string	str = "";
+// static bool	SaveInfo(const Contact phone_book, const std::string& field, 
+// 				void (*f)(std::string& field)) {
+// 	std::string	str = "";
 
-	std::cout << "* " << field << " *" << std::endl;
-	std::cout << "==> " << std::endl;
-	std::cin >> str;
-	std::cout << std::endl;
+// 	std::cout << "* " << field << " *" << std::endl;
+// 	std::cout << "==> " << std::endl;
+// 	std::cin >> str;
+// 	std::cout << std::endl;
 
-	if (std::cin.eof() == true)
-		return;
-	// PhoneBook::phone_book_[idx_].SetFirstName(str);
-	PhoneBook::GetPhoneBook(PhoneBook::GetIdx()).
-}
+// 	if (std::cin.eof() == true)
+// 		return;
+// 	// PhoneBook::phone_book_[idx_].SetFirstName(str);
+// 	phone_book.f(field);
+// }
 
 void	PhoneBook::Add() {
-	/* 모듈화 진행 중!
 	std::string	str = "";
 
 	std::cout << "* first name *" << std::endl;
 	std::cout << "==> " << std::endl;
 	std::cin >> str;
 	std::cout << std::endl;
-
 	if (std::cin.eof() == true)
 		return;
 	phone_book_[idx_].SetFirstName(str);
-	*/
 
+	std::cout << "* last name *" << std::endl;
+	std::cout << "==> " << std::endl;
+	std::cin >> str;
+	std::cout << std::endl;
+	if (std::cin.eof() == true)
+		return;
+	phone_book_[idx_].SetLastName(str);
+
+	std::cout << "* nickname *" << std::endl;
+	std::cout << "==> " << std::endl;
+	std::cin >> str;
+	std::cout << std::endl;
+	if (std::cin.eof() == true)
+		return;
+	phone_book_[idx_].SetNickname(str);
+
+	std::cout << "* phone number *" << std::endl;
+	std::cout << "==> " << std::endl;
+	std::cin >> str;
+	std::cout << std::endl;
+	if (std::cin.eof() == true)
+		return;
+	phone_book_[idx_].SetPhoneNumber(str);
+
+	std::cout << "* darkest secret *" << std::endl;
+	std::cout << "==> " << std::endl;
+	std::cin >> str;
+	std::cout << std::endl;
+	if (std::cin.eof() == true)
+		return;
+	phone_book_[idx_].SetDarkestSecret(str);
+
+	// std::cin.ignore(LLONG_MAX, '\n');
 
 	phone_book_[idx_].SetMyIdx(idx_);
 	SetIdx();
@@ -73,7 +101,7 @@ void	PhoneBook::Search() const {
 		<< std::setw(10) << std::right << "nickname" << std::endl;
 		
 		std::cout
-		<< std::setw(10) << std::right << GetIdx() << "|"
+		<< std::setw(10) << std::right << phone_book_[idx].GetMyIdx() << "|"
 		<< std::setw(10) << std::right << phone_book_[idx].GetFirstName() << "|"
 		<< std::setw(10) << std::right << phone_book_[idx].GetLastName() << "|"
 		<< std::setw(10) << std::right << phone_book_[idx].GetNickname() << std::endl;

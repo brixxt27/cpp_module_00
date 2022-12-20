@@ -10,7 +10,6 @@ public:
 	void	SetIdx();
 	void	Add();
 	void	Search() const;
-	Contact	GetPhoneBook(int idx_) const;
 
 private:
 	Contact phone_book_[8];
