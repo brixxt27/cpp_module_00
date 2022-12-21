@@ -30,64 +30,71 @@ void	PhoneBook::SetSize() {
 void	PhoneBook::Add() {
 	std::string	str = "";
 
-	std::cout << "* first name *" << std::endl;
-	std::cout << "==> " << std::endl;
-	std::getline(std::cin, str);
+	std::cout << "< This contact's index is " << next_idx_ << " >" << std::endl;
+
+	do {
+		std::cout << "* First name *" << std::endl;
+		std::cout << "==> " << std::endl;
+		getline(std::cin, str);
+		if (str != "")
+			break;
+		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
+	} while (str == "");
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
-	if (str == "") {
-		std::cout << "~ Error: A saved contact can’t have empty fields. ~\n" << std::endl;
-		return;
-	}
 	phone_book_[next_idx_].SetFirstName(str);
 
-	std::cout << "* last name *" << std::endl;
-	std::cout << "==> " << std::endl;
-	std::getline(std::cin, str);;
+	do {
+		std::cout << "* Last name *" << std::endl;
+		std::cout << "==> " << std::endl;
+		getline(std::cin, str);
+		if (str != "")
+			break;
+		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
+	} while (str == "");
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
-	if (str == "") {
-		std::cout << "~ Error: A saved contact can’t have empty fields. ~\n" << std::endl;
-		return;
-	}
 	phone_book_[next_idx_].SetLastName(str);
 
-	std::cout << "* nickname *" << std::endl;
-	std::cout << "==> " << std::endl;
-	std::getline(std::cin, str);;
+	do {
+		std::cout << "* Nickname *" << std::endl;
+		std::cout << "==> " << std::endl;
+		getline(std::cin, str);
+		if (str != "")
+			break;
+		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
+	} while (str == "");
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
-	if (str == "") {
-		std::cout << "~ Error: A saved contact can’t have empty fields. ~\n" << std::endl;
-		return;
-	}
 	phone_book_[next_idx_].SetNickname(str);
 
-	std::cout << "* phone number *" << std::endl;
-	std::cout << "==> " << std::endl;
-	std::getline(std::cin, str);;
+	do {
+		std::cout << "* Phone number *" << std::endl;
+		std::cout << "==> " << std::endl;
+		getline(std::cin, str);
+		if (str != "")
+			break;
+		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
+	} while (str == "");
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
-	if (str == "") {
-		std::cout << "~ Error: A saved contact can’t have empty fields. ~\n" << std::endl;
-		return;
-	}
 	phone_book_[next_idx_].SetPhoneNumber(str);
 
-	std::cout << "* darkest secret *" << std::endl;
-	std::cout << "==> " << std::endl;
-	std::getline(std::cin, str);;
+	do {
+		std::cout << "* Darkest secret *" << std::endl;
+		std::cout << "==> " << std::endl;
+		getline(std::cin, str);
+		if (str != "")
+			break;
+		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
+	} while (str == "");
 	std::cout << std::endl;
 	if (std::cin.eof() == true)
 		return;
-	if (str == "") {
-		std::cout << "~ Error: A saved contact can’t have empty fields. ~\n" << std::endl;
-		return;
-	}
 	phone_book_[next_idx_].SetDarkestSecret(str);
 
 	phone_book_[next_idx_].SetMyIdx(next_idx_);
