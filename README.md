@@ -1,6 +1,5 @@
 # Home
-https://github.com/brixxt27/cpp_module
-
+이슈 관리: https://github.com/brixxt27/cpp_module_00/issues/7
 
 # ex00: Megaphone
 ## Usage
