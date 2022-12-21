@@ -1,7 +1,5 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
-#include <sstream>
-#include <string>
 
 PhoneBook::PhoneBook()
 : next_idx_(0)
@@ -105,11 +103,27 @@ void	PhoneBook::Add() {
 void	PhoneBook::Search() const {
 	int	idx = -1;
 
+	if (size_ == 0) {
+		std::cout << "( PhoneBook is empty )\n" << std::endl;
+		return;
+	}
+	else {
+		std::cout
+		<< "---------------------------------------------" << std::endl
+		<< "|"
+		<< std::setw(10) << std::right << "index" << "|"
+		<< std::setw(10) << std::right << "first name" << "|"
+		<< std::setw(10) << std::right << "last name" << "|"
+		<< std::setw(10) << std::right << "nickname" << "|" << std::endl
+		<< "---------------------------------------------" << std::endl;
+		for (int i = 0; size_ < 8 ? i < next_idx_ : i < 8; ++i) {
+			phone_book_[i].DisplayOneContact();
+		}
+	}
+
 	std::cout << "Search: Input an integer number between 0 and 7" << std::endl;
 
-	if (size_ == 0)
-		std::cout << "( PhoneBook is empty )" << std::endl;
-	else if (size_ < 8)
+	if (size_ < 8)
 		std::cout << "( You can search between 0 to " << next_idx_ - 1 << " )" << std::endl;
 	else
 		std::cout << "( You can search between 0 to 7 )" << std::endl; 
@@ -134,46 +148,37 @@ void	PhoneBook::Search() const {
 		std::cout << "~ Error: It's not a saved index! ~\n" << std::endl;
 		return;
 	}	
-	std::cout
-	<< "---------------------------------------------" << std::endl
-	<< "|"
-	<< std::setw(10) << std::right << "index" << "|"
-	<< std::setw(10) << std::right << "first name" << "|"
-	<< std::setw(10) << std::right << "last name" << "|"
-	<< std::setw(10) << std::right << "nickname" << "|" << std::endl
-	<< "---------------------------------------------" << std::endl;
-	
 
-	std::cout << "|"
-	<< std::setw(10) << std::right << phone_book_[idx].GetMyIdx() << "|";
+	// std::cout << "|"
+	// << std::setw(10) << std::right << phone_book_[idx].GetMyIdx() << "|";
 
-	if (phone_book_[idx].GetFirstName().size() > 10) {
-		for (int i = 0; i < 9; ++i)
-			std::cout << phone_book_[idx].GetFirstName().at(i);
-		std::cout << ".";
-	}
-	else
-		std::cout << std::setw(10) << std::right << phone_book_[idx].GetFirstName();
-	std::cout << "|";
+	// if (phone_book_[idx].GetFirstName().size() > 10) {
+	// 	for (int i = 0; i < 9; ++i)
+	// 		std::cout << phone_book_[idx].GetFirstName().at(i);
+	// 	std::cout << ".";
+	// }
+	// else
+	// 	std::cout << std::setw(10) << std::right << phone_book_[idx].GetFirstName();
+	// std::cout << "|";
 
-	if (phone_book_[idx].GetLastName().size() > 10) {
-		for (int i = 0; i < 9; ++i)
-			std::cout << phone_book_[idx].GetLastName().at(i);
-		std::cout << ".";
-	}
-	else
-		std::cout << std::setw(10) << std::right << phone_book_[idx].GetLastName();
-	std::cout << "|";
+	// if (phone_book_[idx].GetLastName().size() > 10) {
+	// 	for (int i = 0; i < 9; ++i)
+	// 		std::cout << phone_book_[idx].GetLastName().at(i);
+	// 	std::cout << ".";
+	// }
+	// else
+	// 	std::cout << std::setw(10) << std::right << phone_book_[idx].GetLastName();
+	// std::cout << "|";
 
-	if (phone_book_[idx].GetNickname().size() > 10) {
-		for (int i = 0; i < 9; ++i)
-			std::cout << phone_book_[idx].GetNickname().at(i);
-		std::cout << ".";
-	}
-	else
-		std::cout << std::setw(10) << std::right << phone_book_[idx].GetNickname();
-	std::cout << "|";
+	// if (phone_book_[idx].GetNickname().size() > 10) {
+	// 	for (int i = 0; i < 9; ++i)
+	// 		std::cout << phone_book_[idx].GetNickname().at(i);
+	// 	std::cout << ".";
+	// }
+	// else
+	// 	std::cout << std::setw(10) << std::right << phone_book_[idx].GetNickname();
+	// std::cout << "|";
 
-	std::cout << std::endl
-	<< "---------------------------------------------" << std::endl;
+	// std::cout << std::endl
+	// << "---------------------------------------------" << std::endl;
 }

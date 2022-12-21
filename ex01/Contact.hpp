@@ -20,6 +20,8 @@ public:
 	const std::string&	GetPhoneNumber() const;
 	const std::string&	GetDarkestSecret() const;
 
+	void	DisplayOneContact() const;
+
 private:
 	int			my_idx_;
 	std::string	first_name_;

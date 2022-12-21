@@ -1,4 +1,5 @@
 #include "Contact.hpp"
+#include <iomanip>
 
 Contact::Contact()
 : my_idx_(-1)
@@ -54,4 +55,39 @@ const std::string&	Contact::GetPhoneNumber() const {
 
 const std::string&	Contact::GetDarkestSecret() const {
 	return darkest_secret_;
+}
+
+void	Contact::DisplayOneContact() const {
+	std::cout << "|"
+	<< std::setw(10) << std::right << GetMyIdx() << "|";
+
+	if (GetFirstName().size() > 10) {
+		for (int i = 0; i < 9; ++i)
+			std::cout << GetFirstName().at(i);
+		std::cout << ".";
+	}
+	else
+		std::cout << std::setw(10) << std::right << GetFirstName();
+	std::cout << "|";
+
+	if (GetLastName().size() > 10) {
+		for (int i = 0; i < 9; ++i)
+			std::cout << GetLastName().at(i);
+		std::cout << ".";
+	}
+	else
+		std::cout << std::setw(10) << std::right << GetLastName();
+	std::cout << "|";
+
+	if (GetNickname().size() > 10) {
+		for (int i = 0; i < 9; ++i)
+			std::cout << GetNickname().at(i);
+		std::cout << ".";
+	}
+	else
+		std::cout << std::setw(10) << std::right << GetNickname();
+	std::cout << "|";
+
+	std::cout << std::endl
+	<< "---------------------------------------------" << std::endl;
 }
