@@ -140,6 +140,9 @@ void	PhoneBook::Search() const {
 		std::cin.ignore(LLONG_MAX, '\n');
 		return;
 	}
+
+	std::cin.ignore(LLONG_MAX, '\n');
+
 	if (idx < 0 || idx > 7) {
 		std::cout << "~ Error: Index is out of range ~\n" << std::endl;
 		return;
@@ -149,36 +152,11 @@ void	PhoneBook::Search() const {
 		return;
 	}	
 
-	// std::cout << "|"
-	// << std::setw(10) << std::right << phone_book_[idx].GetMyIdx() << "|";
-
-	// if (phone_book_[idx].GetFirstName().size() > 10) {
-	// 	for (int i = 0; i < 9; ++i)
-	// 		std::cout << phone_book_[idx].GetFirstName().at(i);
-	// 	std::cout << ".";
-	// }
-	// else
-	// 	std::cout << std::setw(10) << std::right << phone_book_[idx].GetFirstName();
-	// std::cout << "|";
-
-	// if (phone_book_[idx].GetLastName().size() > 10) {
-	// 	for (int i = 0; i < 9; ++i)
-	// 		std::cout << phone_book_[idx].GetLastName().at(i);
-	// 	std::cout << ".";
-	// }
-	// else
-	// 	std::cout << std::setw(10) << std::right << phone_book_[idx].GetLastName();
-	// std::cout << "|";
-
-	// if (phone_book_[idx].GetNickname().size() > 10) {
-	// 	for (int i = 0; i < 9; ++i)
-	// 		std::cout << phone_book_[idx].GetNickname().at(i);
-	// 	std::cout << ".";
-	// }
-	// else
-	// 	std::cout << std::setw(10) << std::right << phone_book_[idx].GetNickname();
-	// std::cout << "|";
-
-	// std::cout << std::endl
-	// << "---------------------------------------------" << std::endl;
+	std::cout << std::setw(16) << "Index: " << phone_book_[idx].GetMyIdx() << std::endl;
+	std::cout << std::setw(16) << "First name: " << phone_book_[idx].GetFirstName() << std::endl;
+	std::cout << std::setw(16) << "Last name: " << phone_book_[idx].GetLastName() << std::endl;
+	std::cout << std::setw(16) << "Nickname: " << phone_book_[idx].GetNickname() << std::endl;
+	std::cout << std::setw(16) << "Phone number: " << phone_book_[idx].GetPhoneNumber() << std::endl;
+	std::cout << std::setw(16) << "Darkest secret: " << phone_book_[idx].GetDarkestSecret() << std::endl;
+	std::cout << std::endl;
 }
