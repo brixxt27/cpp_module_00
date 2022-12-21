@@ -36,65 +36,65 @@ void	PhoneBook::Add() {
 		std::cout << "* First name *" << std::endl;
 		std::cout << "==> " << std::endl;
 		getline(std::cin, str);
+		if (std::cin.eof() == true)
+			return;
 		if (str != "")
 			break;
 		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
 	} while (str == "");
 	std::cout << std::endl;
-	if (std::cin.eof() == true)
-		return;
 	phone_book_[next_idx_].SetFirstName(str);
 
 	do {
 		std::cout << "* Last name *" << std::endl;
 		std::cout << "==> " << std::endl;
 		getline(std::cin, str);
+		if (std::cin.eof() == true)
+			return;
 		if (str != "")
 			break;
 		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
 	} while (str == "");
 	std::cout << std::endl;
-	if (std::cin.eof() == true)
-		return;
 	phone_book_[next_idx_].SetLastName(str);
 
 	do {
 		std::cout << "* Nickname *" << std::endl;
 		std::cout << "==> " << std::endl;
 		getline(std::cin, str);
+		if (std::cin.eof() == true)
+			return;
 		if (str != "")
 			break;
 		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
 	} while (str == "");
 	std::cout << std::endl;
-	if (std::cin.eof() == true)
-		return;
 	phone_book_[next_idx_].SetNickname(str);
 
 	do {
 		std::cout << "* Phone number *" << std::endl;
 		std::cout << "==> " << std::endl;
 		getline(std::cin, str);
+		if (std::cin.eof() == true)
+			return;
 		if (str != "")
 			break;
 		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
 	} while (str == "");
 	std::cout << std::endl;
-	if (std::cin.eof() == true)
-		return;
 	phone_book_[next_idx_].SetPhoneNumber(str);
 
 	do {
 		std::cout << "* Darkest secret *" << std::endl;
 		std::cout << "==> " << std::endl;
 		getline(std::cin, str);
+		if (std::cin.eof() == true)
+			return;
 		if (str != "")
 			break;
 		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
 	} while (str == "");
 	std::cout << std::endl;
-	if (std::cin.eof() == true)
-		return;
 	phone_book_[next_idx_].SetDarkestSecret(str);
 
 	phone_book_[next_idx_].SetMyIdx(next_idx_);
