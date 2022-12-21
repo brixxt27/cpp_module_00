@@ -24,7 +24,7 @@ $>
 - Files to turn in : Makefile, *.cpp, *.{h, hpp}
 - Forbidden functions : None
 ## Detail
-<img width="1426" alt="image" src="https://user-images.githubusercontent.com/83959536/208599844-a740d203-fb0c-41e3-b654-c698332923a4.png">
+<img width="1054" alt="image" src="https://user-images.githubusercontent.com/83959536/208841753-949c818e-02ed-4bae-b955-9ea7557abe03.png">
 
 
 1. 두 개의 class를 구현하라.
