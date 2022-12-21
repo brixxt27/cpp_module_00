@@ -1,6 +1,18 @@
 # Home
 https://github.com/brixxt27/cpp_module
+
+
 # ex00: Megaphone
+## Usage
+```
+git clone https://github.com/brixxt27/cpp_module_00.git
+
+cd cpp_module_00/ex00/
+
+make
+
+./megaphone "shhhhh... I think the students are asleep..." 
+```
 ## Summary
 - Turn-in directory : ex00/
 - Files to turn in : Makefile, megaphone.cpp
@@ -19,6 +31,16 @@ $>
 2. 명령행 인자로 몇 개가 들어오든지 이를 한 줄로 출력하는데, 소문자를 대문자로 변경한다.
 
 # ex01: My Awesome PhoneBook
+## Usage
+```
+git clone https://github.com/brixxt27/cpp_module_00.git
+
+cd cpp_module_00/ex01/
+
+make
+
+./my_awesome_phone_book
+```
 ## Summary
 - Turn-in directory : ex01/
 - Files to turn in : Makefile, *.cpp, *.{h, hpp}

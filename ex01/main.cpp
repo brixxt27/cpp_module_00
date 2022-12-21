@@ -35,9 +35,8 @@ int	main() {
 	while (str != "EXIT") {
 		std::cout << "PhoneBook: Input COMMAND(ADD or SEARCH or EXIT)" << std::endl;
 		std::cout << "==> " << std::endl;
-		std::cin >> str;
+		getline(std::cin, str);
 		std::cout << std::endl;
-		std::cin.ignore(LLONG_MAX, '\n');
 
 		if (str == "ADD") {
 			phone_book.Add();
