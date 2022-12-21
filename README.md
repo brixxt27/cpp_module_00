@@ -37,29 +37,27 @@ $>
 2. class 내에서 사용되는 것은 private로 class 바깥에서 사용되는 것은 public으로 해야 한다.
 3. 처음 phonebook은 비어있으며 유저는 세 개의 명령어(ADD, SEARCH, EXIT)를 입력할 수 있다.
 
--  ADD: save a new contact
-	- If the user enters this command, they are prompted to input the information
-	of the new contact one field at a time. Once all the fields have been completed,
-	add the contact to the phonebook.
+-  ADD: 새로운 연락처 추가
+	- 만약 이 명령을 유저가 입력한다면, 그들은 한 번당 하나씩 새로운 연락처의 정보를 입력한다.
+	모든 정보 입력이 완료 되었을 때, 폰북의 연락처에 저장된다.
 	- The contact fields are: 
 		- first name
 		- last name
 		- nickname
 		- phone number
 		- darkest secret
-	- A saved contact can’t have empty fields.
--  SEARCH: display a specific contact
-	-  Display the saved contacts as a list of 4 columns: index, first name, last
-	name and nickname.
-	-  Each column must be 10 characters wide. A pipe character (’|’) separates
-	them. The text must be right-aligned. If the text is longer than the column,
-	it must be truncated and the last displayable character must be replaced by a
-	dot (’.’).
+	- 연락처는 비어 있는 정보를 받을 수 없다.
+-  SEARCH: 특정 연락처를 보여준다.
+	-  저장된 연락처를 4개의 열로 보여준다: index, first name, last name and nickname.
+	-  각 열은 너비 10개의 문자를 가져야 한다. 이들은 파이프 '|' 문자로 구분되어야 한다. 텍스트들은 오른쪽 정렬이어야 한다.
+	만약 텍스트가 문자 10개보다 많다면, 그것들은 버리고, 보일 수 있는 마지막 문자를 '.'으로 변경해야 한다.
 	-  Then, prompt the user again for the index of the entry to display. If the index
 	is out of range or wrong, define a relevant behavior. Otherwise, display the
 	contact information, one field per line.
+	- 그러면, 유저에게 볼 인덱스를 다시 보여줘라. 만약 인덱스가 범위를 넘거나 잘못되었다면, 그에 따라 정의된 예외처리를 보여줘라.
+	올바른 조건이라면, 한 줄 당 하나의 정보를 보여줘라.
 - EXIT
-	-  The program quits and the contacts are lost forever!
-- Any other input is discarded.
-- Once a command has been correctly executed, the program waits for another one. It
-stops when the user inputs EXIT.
+	-  프로그램을 종료시키고, 저장된 정보는 영원히 손실된다.
+- 다른 입력은 버려진다.
+- 하나의 명령어가 올바르게 실행된다면, 그 프로그램은 이 명령어가 끝날 때까지 다른 명령어를 기다려야 한다.
+프로그램은 유저가 EXIT을 입력할 때 멈춘다.
