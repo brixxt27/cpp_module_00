@@ -73,7 +73,7 @@ void	PhoneBook::Add() {
 }
 
 void	PhoneBook::Search() const {
-	int	idx = -1;
+	std::string	idx = "";
 
 	if (size_ == 0) {
 		std::cout << "( PhoneBook is empty )\n" << std::endl;
@@ -101,34 +101,27 @@ void	PhoneBook::Search() const {
 		std::cout << "( You can search between 0 to 7 )" << std::endl; 
 
 	std::cout << "==> " << std::endl;
-	std::cin >> idx;
+
+	std::getline(std::cin, idx);
+
 	std::cout << std::endl;
 
 	if (std::cin.eof() == true)
 		return;
-	if (std::cin.fail() == true) {
-		std::cout << "~ Error: Index is wrong ~\n" << std::endl;
-		std::cin.clear();
-		std::cin.ignore(LLONG_MAX, '\n');
+	if (idx.size() != 1 || idx < "0" || idx > "7") {
+		std::cout << "~ Error: Index is out of range or wrong ~\n" << std::endl;
 		return;
 	}
-
-	std::cin.ignore(LLONG_MAX, '\n');
-
-	if (idx < 0 || idx > 7) {
-		std::cout << "~ Error: Index is out of range ~\n" << std::endl;
-		return;
-	}
-	if (idx >= size_) {
+	if (idx[0] >= size_ + '0') {
 		std::cout << "~ Error: It's not a saved index! ~\n" << std::endl;
 		return;
 	}	
 
-	std::cout << std::setw(16) << "Index: " << phone_book_[idx].GetMyIdx() << std::endl;
-	std::cout << std::setw(16) << "First name: " << phone_book_[idx].GetFirstName() << std::endl;
-	std::cout << std::setw(16) << "Last name: " << phone_book_[idx].GetLastName() << std::endl;
-	std::cout << std::setw(16) << "Nickname: " << phone_book_[idx].GetNickname() << std::endl;
-	std::cout << std::setw(16) << "Phone number: " << phone_book_[idx].GetPhoneNumber() << std::endl;
-	std::cout << std::setw(16) << "Darkest secret: " << phone_book_[idx].GetDarkestSecret() << std::endl;
+	std::cout << std::setw(16) << "Index: " << phone_book_[idx[0] - '0'].GetMyIdx() << std::endl;
+	std::cout << std::setw(16) << "First name: " << phone_book_[idx[0] - '0'].GetFirstName() << std::endl;
+	std::cout << std::setw(16) << "Last name: " << phone_book_[idx[0] - '0'].GetLastName() << std::endl;
+	std::cout << std::setw(16) << "Nickname: " << phone_book_[idx[0] - '0'].GetNickname() << std::endl;
+	std::cout << std::setw(16) << "Phone number: " << phone_book_[idx[0] - '0'].GetPhoneNumber() << std::endl;
+	std::cout << std::setw(16) << "Darkest secret: " << phone_book_[idx[0] - '0'].GetDarkestSecret() << std::endl;
 	std::cout << std::endl;
 }
