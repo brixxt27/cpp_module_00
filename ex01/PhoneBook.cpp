@@ -25,8 +25,12 @@ void	PhoneBook::SetSize() {
 	++size_;
 }
 
-bool	PhoneBook::IsThereTab(std::string& str) const {
-	return str.find('	', 0) != std::string::npos;
+bool	PhoneBook::IsPrintableAsciiString(std::string& str) const {
+	for (unsigned long i = 0; i < str.size(); ++i) {
+		if (std::isprint(str.at(i)) == false)
+			return false;
+	}
+	return true;
 }
 
 const std::string	PhoneBook::GetString(const std::string field) const {
@@ -38,8 +42,8 @@ const std::string	PhoneBook::GetString(const std::string field) const {
 		getline(std::cin, str);
 		if (std::cin.eof() == true)
 			return "";
-		if (IsThereTab(str) == true) {
-			std::cout << "\n* Error: You must not include tab keys! *\n" << std::endl;
+		if (IsPrintableAsciiString(str) == false) {
+			std::cout << "\n* Error: You must enter a printable ascii string! *\n" << std::endl;
 			continue;
 		}
 		if (str != "")
