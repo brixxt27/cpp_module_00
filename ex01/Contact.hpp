@@ -21,6 +21,13 @@ public:
 	const std::string&	GetDarkestSecret() const;
 
 	void	DisplayOneContact() const;
+	enum field_name {
+		FIRST_NAME = 0,
+		LAST_NAME,
+		NICKNAME,
+		PHONE_NUMBER,
+		DARKEST_SECRET
+	};
 
 private:
 	int			my_idx_;

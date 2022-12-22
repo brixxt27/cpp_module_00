@@ -25,75 +25,47 @@ void	PhoneBook::SetSize() {
 	++size_;
 }
 
-void	PhoneBook::Add() {
+const std::string	PhoneBook::GetString(const std::string field) const {
 	std::string	str = "";
+
+	do {
+		std::cout << "* " << field << " *" << std::endl;
+		std::cout << "==> " << std::endl;
+		getline(std::cin, str);
+		if (std::cin.eof() == true)
+			return "";
+		if (str != "")
+			break;
+		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
+	} while (str == "");
+	std::cout << std::endl;
+	return str;
+}
+
+void	PhoneBook::Add() {
+	const std::string	fields[5] = {
+		"First name",
+		"Last name",
+		"Nickname",
+		"Phone number",
+		"Darkest secret"
+	};
 
 	std::cout << "< This contact's index is " << next_idx_ << " >" << std::endl;
 
-	do {
-		std::cout << "* First name *" << std::endl;
-		std::cout << "==> " << std::endl;
-		getline(std::cin, str);
-		if (std::cin.eof() == true)
-			return;
-		if (str != "")
-			break;
-		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
-	} while (str == "");
-	std::cout << std::endl;
-	phone_book_[next_idx_].SetFirstName(str);
+	
+	phone_book_[next_idx_].SetFirstName(GetString(fields[Contact::FIRST_NAME]));
+	phone_book_[next_idx_].SetLastName(GetString(fields[Contact::LAST_NAME]));
+	phone_book_[next_idx_].SetNickname(GetString(fields[Contact::NICKNAME]));
+	phone_book_[next_idx_].SetPhoneNumber(GetString(fields[Contact::PHONE_NUMBER]));
+	phone_book_[next_idx_].SetDarkestSecret(GetString(fields[Contact::DARKEST_SECRET]));
 
-	do {
-		std::cout << "* Last name *" << std::endl;
-		std::cout << "==> " << std::endl;
-		getline(std::cin, str);
-		if (std::cin.eof() == true)
-			return;
-		if (str != "")
-			break;
-		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
-	} while (str == "");
-	std::cout << std::endl;
-	phone_book_[next_idx_].SetLastName(str);
-
-	do {
-		std::cout << "* Nickname *" << std::endl;
-		std::cout << "==> " << std::endl;
-		getline(std::cin, str);
-		if (std::cin.eof() == true)
-			return;
-		if (str != "")
-			break;
-		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
-	} while (str == "");
-	std::cout << std::endl;
-	phone_book_[next_idx_].SetNickname(str);
-
-	do {
-		std::cout << "* Phone number *" << std::endl;
-		std::cout << "==> " << std::endl;
-		getline(std::cin, str);
-		if (std::cin.eof() == true)
-			return;
-		if (str != "")
-			break;
-		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
-	} while (str == "");
-	std::cout << std::endl;
-	phone_book_[next_idx_].SetPhoneNumber(str);
-
-	do {
-		std::cout << "* Darkest secret *" << std::endl;
-		std::cout << "==> " << std::endl;
-		getline(std::cin, str);
-		if (std::cin.eof() == true)
-			return;
-		if (str != "")
-			break;
-		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
-	} while (str == "");
-	std::cout << std::endl;
-	phone_book_[next_idx_].SetDarkestSecret(str);
+	if (phone_book_[next_idx_].GetFirstName().empty() 
+		|| phone_book_[next_idx_].GetLastName().empty()
+		|| phone_book_[next_idx_].GetNickname().empty()
+		|| phone_book_[next_idx_].GetPhoneNumber().empty()
+		|| phone_book_[next_idx_].GetDarkestSecret().empty())
+		return;
 
 	phone_book_[next_idx_].SetMyIdx(next_idx_);
 	SetNextIdx();

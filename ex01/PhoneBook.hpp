@@ -17,6 +17,8 @@ private:
 	Contact phone_book_[8];
 	int		next_idx_;
 	int		size_;
+	
+	const std::string	GetString(const std::string field) const;
 };
 
 #endif

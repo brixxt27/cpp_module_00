@@ -3,11 +3,11 @@
 
 Contact::Contact()
 : my_idx_(-1)
-, first_name_("")
-, last_name_("")
-, nickname_("")
-, phone_number_("")
-, darkest_secret_("")
+, first_name_("First name")
+, last_name_("Last name")
+, nickname_("Nickname")
+, phone_number_("Phone number")
+, darkest_secret_("Darkest secret")
 {}
 
 void	Contact::SetMyIdx(const int idx) {
