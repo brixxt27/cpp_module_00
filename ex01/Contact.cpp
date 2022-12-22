@@ -59,33 +59,33 @@ const std::string&	Contact::GetDarkestSecret() const {
 
 void	Contact::DisplayOneContact() const {
 	std::cout << "|"
-	<< std::setw(10) << std::right << GetMyIdx() << "|";
+	<< std::setw(PRINT_WIDTH) << std::right << GetMyIdx() << "|";
 
-	if (GetFirstName().size() > 10) {
-		for (int i = 0; i < 9; ++i)
+	if (GetFirstName().size() > PRINT_WIDTH) {
+		for (int i = 0; i < PRINT_WIDTH - 1; ++i)
 			std::cout << GetFirstName().at(i);
 		std::cout << ".";
 	}
 	else
-		std::cout << std::setw(10) << std::right << GetFirstName();
+		std::cout << std::setw(PRINT_WIDTH) << std::right << GetFirstName();
 	std::cout << "|";
 
-	if (GetLastName().size() > 10) {
-		for (int i = 0; i < 9; ++i)
+	if (GetLastName().size() > PRINT_WIDTH) {
+		for (int i = 0; i < PRINT_WIDTH - 1; ++i)
 			std::cout << GetLastName().at(i);
 		std::cout << ".";
 	}
 	else
-		std::cout << std::setw(10) << std::right << GetLastName();
+		std::cout << std::setw(PRINT_WIDTH) << std::right << GetLastName();
 	std::cout << "|";
 
-	if (GetNickname().size() > 10) {
-		for (int i = 0; i < 9; ++i)
+	if (GetNickname().size() > PRINT_WIDTH) {
+		for (int i = 0; i < PRINT_WIDTH - 1; ++i)
 			std::cout << GetNickname().at(i);
 		std::cout << ".";
 	}
 	else
-		std::cout << std::setw(10) << std::right << GetNickname();
+		std::cout << std::setw(PRINT_WIDTH) << std::right << GetNickname();
 	std::cout << "|";
 
 	std::cout << std::endl

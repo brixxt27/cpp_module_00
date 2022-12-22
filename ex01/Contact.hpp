@@ -1,10 +1,23 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <iostream>
+# include <iostream>
+
+# define PRINT_WIDTH 10
+# define MAX_FIELD_WIDTH 16
 
 class Contact {
+
 public:
+
+	enum field_name {
+		FIRST_NAME = 0,
+		LAST_NAME,
+		NICKNAME,
+		PHONE_NUMBER,
+		DARKEST_SECRET
+	};
+
 	Contact();
 	void	SetMyIdx(const int idx);
 	void	SetFirstName(const std::string& first_name);
@@ -21,15 +34,9 @@ public:
 	const std::string&	GetDarkestSecret() const;
 
 	void	DisplayOneContact() const;
-	enum field_name {
-		FIRST_NAME = 0,
-		LAST_NAME,
-		NICKNAME,
-		PHONE_NUMBER,
-		DARKEST_SECRET
-	};
 
 private:
+
 	int			my_idx_;
 	std::string	first_name_;
 	std::string	last_name_;

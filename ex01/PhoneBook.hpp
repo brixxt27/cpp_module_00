@@ -3,6 +3,8 @@
 
 # include "Contact.hpp"
 
+# define PHONE_BOOK_SIZE 8
+
 class PhoneBook {
 public:
 	PhoneBook();
@@ -14,7 +16,7 @@ public:
 	void	Search() const;
 
 private:
-	Contact phone_book_[8];
+	Contact phone_book_[PHONE_BOOK_SIZE];
 	int		next_idx_;
 	int		size_;
 	
