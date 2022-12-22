@@ -21,6 +21,7 @@ private:
 	int		size_;
 	
 	const std::string	GetString(const std::string field) const;
+	bool	IsThereTab(std::string& str) const;
 };
 
 #endif

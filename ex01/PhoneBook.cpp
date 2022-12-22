@@ -25,19 +25,27 @@ void	PhoneBook::SetSize() {
 	++size_;
 }
 
+bool	PhoneBook::IsThereTab(std::string& str) const {
+	return str.find('	', 0) != std::string::npos;
+}
+
 const std::string	PhoneBook::GetString(const std::string field) const {
 	std::string	str = "";
 
-	do {
+	while (1) {
 		std::cout << "* " << field << " *" << std::endl;
 		std::cout << "==> " << std::endl;
 		getline(std::cin, str);
 		if (std::cin.eof() == true)
 			return "";
+		if (IsThereTab(str) == true) {
+			std::cout << "\n* Error: You must not include tab keys! *\n" << std::endl;
+			continue;
+		}
 		if (str != "")
 			break;
 		std::cout << "* Error: Enter a line that is not empty! *\n" << std::endl;
-	} while (str == "");
+	}
 	std::cout << std::endl;
 	return str;
 }
