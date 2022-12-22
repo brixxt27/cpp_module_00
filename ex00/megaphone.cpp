@@ -11,7 +11,7 @@ int	main(int argc, char *argv[])
 	for (int i = 1; i < argc; ++i) {
 		str = argv[i];
 		for (std::string::iterator it = str.begin(); it != str.end(); ++it) {
-			std::islower(*it) ? std::cout << (char)std::toupper(*it) : std::cout << *it;
+			std::islower(*it) ? std::cout << static_cast<char>(std::toupper(*it)) : std::cout << *it;
 		}
 	}
 	std::cout << std::endl;
