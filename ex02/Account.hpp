@@ -47,10 +47,10 @@ private:
 
 	static void	_displayTimestamp( void );
 
-	int				_accountIndex;
-	int				_amount;
-	int				_nbDeposits;
-	int				_nbWithdrawals;
+	int				_accountIndex;	// 계좌 index
+	int				_amount;		// 총액
+	int				_nbDeposits;	// 보증금
+	int				_nbWithdrawals;	// 인출
 
 	Account( void );
 
