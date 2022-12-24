@@ -34,11 +34,20 @@ void	Account::displayAccountsInfos( void ) {
 }
 
 Account::Account( int initial_deposit ) 
-: _accountIndex(_nbAccounts){
+: _accountIndex(_nbAccounts)
+, _amount(initial_deposit) {
 	_displayTimestamp();
 	std::cout 
 	<< "index:" << _accountIndex 
-	<< ";amount:" << initial_deposit 
+	<< ";amount:" << _amount 
+	<< ";created" << std::endl;
+}
+
+Account::~Account() {
+	_displayTimestamp();
+	std::cout 
+	<< "index:" << _accountIndex 
+	<< ";amount:" << _amount
 	<< ";created" << std::endl;
 }
 
