@@ -75,11 +75,13 @@ git clone https://github.com/brixxt27/cpp_module_00.git; cd cpp_module_00/ex01/;
 # ex02: The job of your dreams
 ## Usage
 ```
+git clone https://github.com/brixxt27/cpp_module_00.git; cd cpp_module_00/ex02/; make;
+./the_job_of_your_dreams
 ```
 ## Summary
-Turn-in directory : ex02/
-Files to turn in : Makefile, Account.cpp, Account.hpp, tests.cpp
-Forbidden functions : None
+- Turn-in directory : ex02/
+- Files to turn in : Makefile, Account.cpp, Account.hpp, tests.cpp
+- Forbidden functions : None
 ## Detail
 오늘은 GlobalBanksters United에서 당신의 첫 근무일입니다. 성공적인 채용 시험을 통과하고, dev 팀에 소속 되었습니다. 어쨌든 당신의 매니저는 단지 해야할 일 몇 가지를 줬습니다. 첫 일은 손실된 파일을 복구하는 것입니다. 이 팀은 Git 을 이용할지 모르고 오직 USB로 소스를 관리하는 팀이었습니다. 원래라면 당장 이 팀을 나가는 것이 합당하겠지만 이곳을 변화시키기로 마음 먹었습니다. 목표는 Accout.cpp 를 복구하는 것이며, 현재 남은 것은 Accout.hpp 와 이를 실행한 log 파일 뿐입니다. c++ 매너로 가득 채워 Accout.cpp 를 구현해야하고, 타임 스탬프를 제외하고 log와 동일하게 출력 되도록 해야 합니다.
 ### 출력 결과에 따른 메소드 설계(메소드는 출력 결과를 보고 유추하여 구현해야 함)
