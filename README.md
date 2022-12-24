@@ -4,7 +4,9 @@
 # ex00: Megaphone
 ## Usage
 ```
-git clone https://github.com/brixxt27/cpp_module_00.git; cd cpp_module_00/ex00/; make;
+git clone https://github.com/brixxt27/cpp_module_00.git
+cd cpp_module_00/ex00/
+make
 ./megaphone "shhhhh... I think the students are asleep..." 
 ```
 ## Summary
@@ -27,7 +29,9 @@ $>
 # ex01: My Awesome PhoneBook
 ## Usage
 ```
-git clone https://github.com/brixxt27/cpp_module_00.git; cd cpp_module_00/ex01/; make;
+git clone https://github.com/brixxt27/cpp_module_00.git
+cd cpp_module_00/ex01/
+make
 ./my_awesome_phone_book
 ```
 ## Summary
@@ -75,7 +79,9 @@ git clone https://github.com/brixxt27/cpp_module_00.git; cd cpp_module_00/ex01/;
 # ex02: The job of your dreams
 ## Usage
 ```
-git clone https://github.com/brixxt27/cpp_module_00.git; cd cpp_module_00/ex02/; make;
+git clone https://github.com/brixxt27/cpp_module_00.git
+cd cpp_module_00/ex02/
+make
 ./the_job_of_your_dreams
 ```
 ## Summary
