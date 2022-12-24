@@ -49,8 +49,8 @@ private:
 
 	int				_accountIndex;	// 계좌 index
 	int				_amount;		// 총액
-	int				_nbDeposits;	// 보증금
-	int				_nbWithdrawals;	// 인출
+	int				_nbDeposits;	// 예금 입금 횟수
+	int				_nbWithdrawals;	// 인출 횟수
 
 	Account( void );
 
