@@ -1,5 +1,5 @@
 ```
-생성자
+Account() 생성자
 ```
 [19920104_091532] index:0;amount:42;created
 [19920104_091532] index:1;amount:54;created
@@ -15,7 +15,9 @@ Account::displayAccountsInfos();
 ```
 [19920104_091532] accounts:8;total:20049;deposits:0;withdrawals:0
 
-# std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+```
+std::for_each( acc_begin, acc_end, std::mem_fun_ref( &Account::displayStatus ) );
+```
 [19920104_091532] index:0;amount:42;deposits:0;withdrawals:0
 [19920104_091532] index:1;amount:54;deposits:0;withdrawals:0
 [19920104_091532] index:2;amount:957;deposits:0;withdrawals:0

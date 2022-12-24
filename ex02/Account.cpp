@@ -51,6 +51,15 @@ Account::~Account() {
 	<< ";created" << std::endl;
 }
 
+void	Account::displayStatus( void ) const {
+	_displayTimestamp();
+	std::cout
+	<< "index:" << _accountIndex
+	<< ";amount:" << _amount
+	<< ";deposits:" << _nbDeposits
+	<< ";withdrawals:" << _nbWithdrawals << std::endl;
+}
+
 void	Account::_displayTimestamp( void ) {
 	std::time_t	t = std::time(nullptr);
 	std::tm*	now = std::localtime(&t);
